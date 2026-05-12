@@ -1,4 +1,4 @@
-# Arena Gamer – Projeto Base (Versão do Aluno)
+# Arena Gamer – Projeto Base
 
 Sistema de gerenciamento de lan house desenvolvido para a disciplina de  
 **Programação e Otimização de Banco de Dados – 3ª Avaliação**.
