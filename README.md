@@ -42,6 +42,70 @@ npm run dev
 
 ---
 
+## Rodar com Docker (recomendado)
+
+Este projeto pode ser executado com Docker para evitar problemas de configuração local e garantir que o backend e o banco MySQL funcionem juntos.
+
+### Por que usar Docker?
+
+- Isola o ambiente da aplicação, evitando dependências locais quebradas.
+- Não precisa instalar Node.js ou MySQL diretamente no Windows.
+- Garante que todos usem a mesma versão do Node e do MySQL.
+- Facilita subir e parar o sistema com poucos comandos.
+
+### Passo a passo para usar Docker
+
+1. Instale o Docker Desktop no Windows.
+   - Link: https://www.docker.com/get-started
+   - Ative o WSL 2 se o instalador pedir.
+
+2. Abra o PowerShell ou terminal na pasta do projeto:
+
+```powershell
+cd g:..\pbd-alunos
+```
+
+3. Suba os containers:
+
+```powershell
+docker compose up --build
+```
+
+4. Aguarde a construção e o start dos serviços.
+   - O container `db` inicia o MySQL.
+   - O container `app` constrói e executa o backend Node.
+
+5. Acesse o sistema no navegador:
+
+```text
+http://localhost:3000
+```
+
+6. Quando terminar, pare os containers:
+
+```powershell
+docker compose down
+```
+
+### Observações importantes
+
+- O MySQL dentro do container usa os arquivos de inicialização em `database/`.
+- Se precisar ver logs, use:
+
+```powershell
+docker compose logs -f
+```
+
+- Para recriar o ambiente do zero, pare e suba novamente com:
+
+```powershell
+docker compose down
+
+docker compose up --build
+```
+
+---
+
 ## Tabelas que você precisa criar
 
 ```
